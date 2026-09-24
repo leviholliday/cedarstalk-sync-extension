@@ -1,6 +1,6 @@
 # cedarstalk-sync
 
-Chrome extension that keeps a [cedarstalk](https://cedarstalk-access.netlify.app)
+Chrome extension that keeps a [cedarstalk](https://cedarstalk.netlify.app)
 database current from the browser you're already signed into. It does no
 thinking of its own -- it asks the engine's `/v1/sync/manifest` what's
 missing, runs those directory queries and booklist fetches with your own
@@ -15,11 +15,11 @@ default.
 2. `chrome://extensions` (or `edge://extensions`) → enable Developer mode → **Load unpacked** → select
    the unzipped folder.
 3. Click the extension icon, paste your engine's URL and the bearer token
-   you were issued at [cedarstalk-access.netlify.app](https://cedarstalk-access.netlify.app),
+   you were issued at [cedarstalk.netlify.app](https://cedarstalk.netlify.app),
    press Save.
 
 You need a token before this does anything -- get one at
-[cedarstalk-access.netlify.app](https://cedarstalk-access.netlify.app) if
+[cedarstalk.netlify.app](https://cedarstalk.netlify.app) if
 you don't have one yet. It's free, takes a `@cedarville.edu` email, and the
 engine itself won't start without a valid one.
 
