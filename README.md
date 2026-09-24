@@ -10,7 +10,9 @@ default.
 ## Install
 
 1. Download this repo (`Code` → `Download ZIP`) and unzip it, or `git clone`.
-2. `chrome://extensions` → enable Developer mode → **Load unpacked** → select
+   On Windows, right-click the zip → **Extract All** first -- Chrome can't load
+   an extension from inside a zip.
+2. `chrome://extensions` (or `edge://extensions`) → enable Developer mode → **Load unpacked** → select
    the unzipped folder.
 3. Click the extension icon, paste your engine's URL and the bearer token
    you were issued at [cedarstalk-access.netlify.app](https://cedarstalk-access.netlify.app),
