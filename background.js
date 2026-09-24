@@ -273,6 +273,14 @@ chrome.runtime.onMessage.addListener((message, _sender, respond) => {
     booklists: () => syncBooklists({ term: message.term }),
     manifest: () => engine("/v1/sync/manifest"),
     status: async () => (await chrome.storage.local.get("status")).status ?? {},
+    connect: async () => {
+      const before = await settings();
+      const firstTime = !before.token;
+      await chrome.storage.local.set({ engine: message.engine, token: message.token });
+      await schedule();
+      if (firstTime) syncAll({ refresh: true });
+      return { firstTime };
+    },
   };
   const handler = handlers[message.type];
   if (!handler) return false;

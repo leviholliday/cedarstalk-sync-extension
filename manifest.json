@@ -3,9 +3,40 @@
   "name": "cedarstalk sync",
   "version": "0.1.0",
   "description": "Keeps a cedarstalk database current from the browser you are already signed into.",
-  "permissions": ["storage", "alarms", "scripting", "tabs"],
-  "host_permissions": ["https://selfservice.cedarville.edu/*", "https://store.cedarville.edu/*"],
-  "optional_host_permissions": ["http://*/*", "https://*/*"],
-  "background": { "service_worker": "background.js", "type": "module" },
-  "action": { "default_popup": "popup.html", "default_title": "cedarstalk sync" }
+  "permissions": [
+    "storage",
+    "alarms",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://selfservice.cedarville.edu/*",
+    "https://store.cedarville.edu/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "cedarstalk sync"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "connect.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
 }
