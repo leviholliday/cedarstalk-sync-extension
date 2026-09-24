@@ -1,7 +1,7 @@
 /**
  * The courier.
  *
- * Two of cedarengine's four sources are behind a login a server cannot hold:
+ * Two of cedarstalk's four sources are behind a login a server cannot hold:
  * the directory wants an SSO session, and the campus store wants an AWS WAF
  * challenge solved by a real browser. This is a real browser, and you are
  * already signed into both. So the extension does no thinking of its own — it

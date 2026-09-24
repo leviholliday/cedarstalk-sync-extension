@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "cedarengine sync",
+  "name": "cedarstalk sync",
   "version": "0.1.0",
-  "description": "Keeps a cedarengine database current from the browser you are already signed into.",
+  "description": "Keeps a cedarstalk database current from the browser you are already signed into.",
   "permissions": ["storage", "alarms", "scripting", "tabs"],
   "host_permissions": ["https://selfservice.cedarville.edu/*", "https://store.cedarville.edu/*"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],
   "background": { "service_worker": "background.js", "type": "module" },
-  "action": { "default_popup": "popup.html", "default_title": "cedarengine sync" }
+  "action": { "default_popup": "popup.html", "default_title": "cedarstalk sync" }
 }
