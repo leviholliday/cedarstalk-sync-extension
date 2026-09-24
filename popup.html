@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        --ink: #ece7df;
+        --dim: #8b8378;
+        --bg: #14120f;
+        --panel: #1c1916;
+        --line: #2b2621;
+        --pink: #ff87d7;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        width: 320px;
+        background: var(--bg);
+        color: var(--ink);
+        font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+        padding: 14px;
+      }
+      h1 { font-size: 13px; font-weight: 700; letter-spacing: 0.02em; }
+      h1 span { color: var(--pink); }
+      p.sub { color: var(--dim); margin-bottom: 12px; }
+      label { display: block; color: var(--dim); margin-top: 9px; }
+      input {
+        width: 100%;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        font: inherit;
+        padding: 5px 6px;
+        margin-top: 2px;
+      }
+      .row { display: flex; gap: 6px; margin-top: 12px; }
+      button {
+        flex: 1;
+        background: var(--pink);
+        color: #14120f;
+        border: 0;
+        font: inherit;
+        font-weight: 700;
+        padding: 6px 8px;
+        cursor: pointer;
+      }
+      button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+      .status {
+        border-top: 1px solid var(--line);
+        margin-top: 12px;
+        padding-top: 8px;
+        color: var(--dim);
+        white-space: pre-wrap;
+        min-height: 3.2em;
+      }
+      .err { color: var(--pink); }
+      .check { display: flex; gap: 6px; align-items: center; margin-top: 10px; color: var(--dim); }
+      .check input { width: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>cedar<span>engine</span> sync</h1>
+    <p class="sub">fetches what only your browser can reach</p>
+
+    <label>engine url<input id="engine" placeholder="http://127.0.0.1:3000" /></label>
+    <label>bearer token<input id="token" type="password" /></label>
+    <label>term<input id="term" placeholder="2027SP" /></label>
+    <label>every N hours<input id="everyHours" type="number" min="1" /></label>
+    <div class="check">
+      <input id="autoSync" type="checkbox" /><span>sync on a schedule</span>
+    </div>
+
+    <div class="row">
+      <button id="save" type="button">Save</button>
+      <button id="sync" type="button" class="ghost">Sync now</button>
+    </div>
+    <div class="row">
+      <button id="directory" type="button" class="ghost">Directory only</button>
+      <button id="booklists" type="button" class="ghost">Booklists only</button>
+    </div>
+
+    <div class="status" id="status">—</div>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

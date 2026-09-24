@@ -1,0 +1,33 @@
+# cedarengine-sync
+
+Chrome extension that keeps a [cedarengine](https://cedarengine-access.netlify.app)
+database current from the browser you're already signed into. It does no
+thinking of its own -- it asks the engine's `/v1/sync/manifest` what's
+missing, runs those directory queries and booklist fetches with your own
+cookies, and posts the results back. Runs itself every twelve hours by
+default.
+
+## Install
+
+1. Download this repo (`Code` → `Download ZIP`) and unzip it, or `git clone`.
+2. `chrome://extensions` → enable Developer mode → **Load unpacked** → select
+   the unzipped folder.
+3. Click the extension icon, paste your engine's URL and the bearer token
+   you were issued at [cedarengine-access.netlify.app](https://cedarengine-access.netlify.app),
+   press Save.
+
+You need a token before this does anything -- get one at
+[cedarengine-access.netlify.app](https://cedarengine-access.netlify.app) if
+you don't have one yet. It's free, takes a `@cedarville.edu` email, and the
+engine itself won't start without a valid one.
+
+## What it touches
+
+Only `selfservice.cedarville.edu` and `store.cedarville.edu` by default
+(see `manifest.json`'s `host_permissions`) -- the two sites cedarengine
+actually needs to sync from. It talks to your own engine instance over
+whatever URL you configure; it has no idea any other engine exists.
+
+This repo is deliberately just the extension. The engine it talks to is
+Levi Holliday's private project -- this download doesn't include or need
+that source, only a token and a URL.
