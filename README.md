@@ -1,5 +1,10 @@
 # cedarstalk-sync
 
+> Built by [Kieran Klukas](https://dunkirk.sh) as part of
+> [cedarengine](https://tangled.org/dunkirk.sh/cedarengine) -- all credit is his.
+> cedarstalk's changes (auto-connect from the setup page) were made with
+> [Claude](https://claude.com/claude-code).
+
 Chrome extension that keeps a [cedarstalk](https://cedarstalk.netlify.app)
 database current from the browser you're already signed into. It does no
 thinking of its own -- it asks the engine's `/v1/sync/manifest` what's
